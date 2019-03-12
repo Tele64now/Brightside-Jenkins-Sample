@@ -2,22 +2,22 @@ pipeline {
     agent any
     environment {
         // Endevor Details
-        ENDEVOR_CONNECTION="--port 6002 --protocol http --reject-unauthorized false"
-        ENDEVOR_LOCATION="--instance ENDEVOR --env DEV --sys MARBLES --sub MARBLES --stage-number 1 --ccid JENKXX --comment JENKXX"
+        ENDEVOR_CONNECTION="--port 7080 --protocol http --reject-unauthorized false"
+        ENDEVOR_LOCATION="--instance ndvr_MSTROPS --env DEV --sys MARBLES --sub MARBLES --stage-number 1 --ccid JENK --comment JENK_PDE"
         ENDEVOR="$ENDEVOR_CONNECTION $ENDEVOR_LOCATION"
 
         ZOWE_OPT_HOSTNAME=credentials('eosHost')
 
         // z/OSMF Connection Details
         ZOWE_OPT_HOST=credentials('eosHost')
-        ZOWE_OPT_PORT="443"
+        ZOWE_OPT_PORT="449"
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
         // File Master Plus Connection Details
-        FMP="--port 6001 --protocol http --reject-unauthorized false"
+        //FMP="--port 6001 --protocol http --reject-unauthorized false"
 
         // CICS Connection Details
-        CICS="--port 6000 --region-name CICSTRN1"
+        //CICS="--port 10156 --region-name SYSVC510"
     }
     stages {
         stage('build') {
