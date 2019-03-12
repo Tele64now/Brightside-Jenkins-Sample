@@ -5,7 +5,7 @@ var PluginError = require('plugin-error');
 var cmd = require('node-cmd');
 
 /**
- * await Job Callback
+ * await Job Callback 3112019
  * @callback awaitJobCallback
  * @param {Error} err 
  */
