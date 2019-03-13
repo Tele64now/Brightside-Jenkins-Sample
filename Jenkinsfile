@@ -14,10 +14,10 @@ pipeline {
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
         // File Master Plus Connection Details
-        //FMP="--port 6001 --protocol http --reject-unauthorized false"
+        FMP="--port 6001 --protocol http --reject-unauthorized false"
 
         // CICS Connection Details
-        //CICS="--port 10156 --region-name SYSVC510"
+        CICS="--port 10156 --region-name SYSVC510"
     }
     stages {
         stage('build') {
@@ -35,17 +35,17 @@ pipeline {
             }
         }
 
-       //stage('deploy') {
-           // steps {
+       stage('deploy') {
+           steps {
                 //ZOWE_OPT_USER & ZOWE_OPT_PASSWORD are used to interact with z/OSMF and CICS
-              //  withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
+              withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
                     //ZOWE_OPT_PASS is used by FMP plugin
-                //    withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASS')]) {
-                  //      sh 'gulp deploy'
-                  //  }
-               // }
-           // }
-       // }
+                   withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASS')]) {
+                      sh 'gulp deploy'
+                   }
+               }
+            }
+        }
         stage('test') {
             steps {
                 //ZOWE_OPT_USER & ZOWE_OPT_PASS are used to interact with z/OSMF
