@@ -34,7 +34,8 @@ pipeline {
                 }
             }
         }
-        /*stage('deploy') {
+/*
+        stage('deploy') {
             steps {
                 //ZOWE_OPT_USER & ZOWE_OPT_PASSWORD are used to interact with z/OSMF and CICS
                 withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
@@ -55,4 +56,4 @@ pipeline {
         }
     }
 }
-    }
+*/
