@@ -9,7 +9,7 @@ pipeline {
         ZOWE_OPT_HOSTNAME=credentials('eosHost')
 
         // z/OSMF Connection Details
-        ZOWE_OPT_HOST=credentials('eosHost')
+        ZOWE_OPT_HOST=credentials('eosHost1')
         ZOWE_OPT_PORT="449"
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
@@ -37,9 +37,9 @@ pipeline {
         stage('deploy') {
             steps {
                 //ZOWE_OPT_USER & ZOWE_OPT_PASSWORD are used to interact with z/OSMF and CICS
-                withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
                     //ZOWE_OPT_PASS is used by FMP plugin
-                    withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASS')]) {
+                    withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASS')]) {
                         sh 'gulp deploy'
                     }
                 }
