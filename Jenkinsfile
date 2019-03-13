@@ -30,7 +30,7 @@ pipeline {
                 sh 'npm install'
                 //ZOWE_OPT_USERNAME & ZOWE_OPT_PASSWORD are used to interact with Endevor 
                 withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USERNAME', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
-                bat 'gulp build'  
+                sh 'gulp build'  
                 }
             }
         }
