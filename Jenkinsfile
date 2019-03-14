@@ -24,7 +24,7 @@ pipeline {
             steps {
                 bat 'node --version'
                 bat 'npm --version'
-                bat 'bright --version'
+                //bat 'bright --version'
                 bat 'bright plugins list'
                 bat 'npm install gulp-cli -g'
                 bat 'npm install'
