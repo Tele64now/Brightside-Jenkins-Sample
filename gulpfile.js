@@ -120,7 +120,7 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
   });
 });
 
-/* gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
+ gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
       command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.DBRMLIB" "BRIGHT.MARBLES.DBRMLIB" -m MARBLEXX ' + fmp;
 
@@ -133,9 +133,9 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
       callback();
     };
   });
-}); */
+});
 
-/* gulp.task('copy-load', 'Copy LOADLIB to test environment', function (callback) {
+ gulp.task('copy-load', 'Copy LOADLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
       command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.LOADLIB" "CICS.TRAIN.MARBLES.LOADLIB" -m MARBLEXX ' + fmp;
 
@@ -148,6 +148,6 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
       callback();
     };
   });
-}); */
+}); 
 
-// gulp.task('deploy', 'Deploy Program', gulpSequence('copy-dbrm','copy-load','bind-n-grant','cics-refresh'));
+ gulp.task('deploy', 'Deploy Program', gulpSequence('copy-dbrm','copy-load','bind-n-grant','cics-refresh'));
