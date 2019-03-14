@@ -22,15 +22,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'node --version'
-                sh 'npm --version'
-                sh 'bright --version'
-                sh 'bright plugins list'
-                sh 'npm install gulp-cli -g'
-                sh 'npm install'
+                bat 'node --version'
+                bat 'npm --version'
+                bat 'bright --version'
+                bat 'bright plugins list'
+                bat 'npm install gulp-cli -g'
+                bat 'npm install'
                 //ZOWE_OPT_USERNAME & ZOWE_OPT_PASSWORD are used to interact with Endevor 
                 withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USERNAME', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
-                sh 'gulp build'  
+                bat 'gulp build'  
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
               withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
                     //ZOWE_OPT_PASS is used by FMP plugin
                    withCredentials([usernamePassword(credentialsId: 'eosCreds1', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASS')]) {
-                      sh 'gulp deploy'
+                      bat 'gulp deploy'
                    }
                }
             }
@@ -50,7 +50,7 @@ pipeline {
             steps {
                 //ZOWE_OPT_USER & ZOWE_OPT_PASS are used to interact with z/OSMF
                 withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }
