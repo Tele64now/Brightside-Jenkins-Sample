@@ -122,7 +122,7 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
 
  gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
-      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.DBRMLIB" "BRIGHT.MARBLES.DBRMLIB" -m MARBLEXX ' + fmp;
+      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.DBRMLIB" "BRIGHT.MARBLES.DBRMLIB" -m MARBLES ' + fmp;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
