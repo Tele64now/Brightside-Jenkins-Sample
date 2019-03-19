@@ -75,7 +75,7 @@ gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
 
 gulp.task('build-cobol', 'Build COBOL element', function (callback) {
   var endevor = (typeof process.env.ENDEVOR === "undefined") ? "" : process.env.ENDEVOR,
-      command = "bright endevor generate element MARBLES --sys MARBLES --sub MARBLES --sn 1 --type COBOL --override-signout --maxrc 0 " + endevor;
+      command = "bright endevor generate element MARBLES --sn 1 --type COBOL --override-signout --maxrc 0 " + endevor;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
@@ -90,7 +90,7 @@ gulp.task('build-cobol', 'Build COBOL element', function (callback) {
 
 gulp.task('build-lnk', 'Build LNK element', function (callback) {
   var endevor = (typeof process.env.ENDEVOR === "undefined") ? "" : process.env.ENDEVOR,
-      command = "bright endevor generate element MARBLES --sys MARBLES --sub MARBLES --sn 1 --type LNK --override-signout --maxrc 0 " + endevor;
+      command = "bright endevor generate element MARBLES --sn 1 --type LNK --override-signout --maxrc 0 " + endevor;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
