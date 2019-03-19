@@ -25,19 +25,19 @@ pipeline {
                 bat 'node --version'
                 bat 'npm --version'
                 bat 'bright --version'
-                //bat 'npm config set @brightside:registry https://api.bintray.com/npm/ca/brightside'
+                bat 'npm config set @brightside:registry https://api.bintray.com/npm/ca/brightside'
 
-                //bat 'bright plugins install @brightside/endevor@lts-incremental'
-                //bat 'bright plugins install @brightside/filemasterplus@lts-incremental'
-                //bat 'bright plugins install @brightside/ops@lts-incremental'
+                bat 'bright plugins install @brightside/endevor@lts-incremental'
+                bat 'bright plugins install @brightside/filemasterplus@lts-incremental'
+                bat 'bright plugins install @brightside/ops@lts-incremental'
 
-                //bat 'bright plugins install @brightside/cics@lts-incremental'
-                //bat 'bright plugins install @brightside/db2@lts-incremental'
+                bat 'bright plugins install @brightside/cics@lts-incremental'
+                bat 'bright plugins install @brightside/db2@lts-incremental'
 
-                //bat 'bright plugins install @brightside/zos-extended-files@lts-incremental'
-                //bat 'bright plugins install @brightside/zos-extended-jobs@lts-incremental'
+                bat 'bright plugins install @brightside/zos-extended-files@lts-incremental'
+                bat 'bright plugins install @brightside/zos-extended-jobs@lts-incremental'
                 bat 'bright plugins list'
-                //bat 'npm install gulp-cli -g'
+                bat 'npm install gulp-cli -g'
                 bat 'npm install'
                 //ZOWE_OPT_USERNAME & ZOWE_OPT_PASSWORD are used to interact with Endevor 
                 withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USERNAME', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
