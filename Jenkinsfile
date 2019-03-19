@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Endevor Details
         ENDEVOR_CONNECTION="--port 7080 --protocol http --reject-unauthorized false"
-        ENDEVOR_LOCATION="--instance ENDEVOR --env DEV --sys MARBLES --sub MARBLES --stage-number 1 --ccid JENK --comment JENK_PDE"
+        ENDEVOR_LOCATION="--instance ENDEVOR --env DEV --sys MARBLES --sub MARBLES --ccid JENK --comment JENK_PDE"
         ENDEVOR="$ENDEVOR_CONNECTION $ENDEVOR_LOCATION"
 
         ZOWE_OPT_HOSTNAME=credentials('eosHost')
