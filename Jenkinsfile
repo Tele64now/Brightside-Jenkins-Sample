@@ -14,10 +14,10 @@ pipeline {
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
         // File Master Plus Connection Details
-        FMP="--port 6001 --protocol http --reject-unauthorized false"
+        FMP="--port 5194 --protocol http --reject-unauthorized false"
 
         // CICS Connection Details
-        CICS="--port 10156 --region-name SYSVC510"
+        CICS="--port 10015 --region-name SYSVC510"
     }
     stages {
         stage('build') {
