@@ -49,7 +49,7 @@ function sleep(ms) {
 }
 
 gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
-  var command = 'bright jobs submit data-set "CUSTXXX.MARBLES.JCL(MARBIND)" --rff jobid --rft string';
+  var command = 'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBIND)" --rff jobid --rft string';
   
   // Submit job, await completion
   cmd.get(command, function (err, data, stderr) {
@@ -122,7 +122,7 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
 
  gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
-      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.DBRMLIB" "BRIGHT.MARBLES.DBRMLIB" -m MARBLES ' + fmp;
+      command = 'bright file-master-plus copy data-set "SHARE.ENDEVOR.MARBLES.MARBLES.D1.DBRMLIB" "SHARE.MARBLES.DBRMLIB" -m MARBLES ' + fmp;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
@@ -137,7 +137,7 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
 
  gulp.task('copy-load', 'Copy LOADLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
-      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.LOADLIB" "CICS.TRAIN.MARBLES.LOADLIB" -m MARBLEXX ' + fmp;
+      command = 'bright file-master-plus copy data-set "SHARE.ENDEVOR.MARBLES.MARBLES.D1.LOADLIB" "SHARE.INTERTST.USER.LOAD" -m MARBLES ' + fmp;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
