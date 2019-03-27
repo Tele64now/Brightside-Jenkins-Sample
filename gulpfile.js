@@ -75,7 +75,7 @@ gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
 
 gulp.task('build-cobol', 'Build COBOL element', function (callback) {
   var endevor = (typeof process.env.ENDEVOR === "undefined") ? "" : process.env.ENDEVOR,
-      command = "bright endevor generate element MARBLES --sn 1 --type COBOL --override-signout --maxrc 0 " + endevor;
+      command = "bright endevor generate element MARBLES --user husmi01 --pass Will@64 --sn 1 --type COBOL --override-signout --maxrc 0 " + endevor;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
