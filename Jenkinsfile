@@ -6,10 +6,10 @@ pipeline {
         ENDEVOR_LOCATION="--instance ENDEVOR --env DEV --sys MARBLES --sub MARBLES --ccid JENK --comment JENK_PDE"
         ENDEVOR="$ENDEVOR_CONNECTION $ENDEVOR_LOCATION"
 
-        ZOWE_OPT_HOSTNAME=credentials('eosHost')
+        //ZOWE_OPT_HOSTNAME=credentials('eosHost')
 
         // z/OSMF Connection Details
-        // ZOWE_OPT_HOST=credentials('eosHost')
+        ZOWE_OPT_HOST=credentials('eosHost')
         ALTHOST=credentials('altHost')
         ZOWE_OPT_PORT="449"
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
@@ -41,8 +41,8 @@ pipeline {
                 bat 'npm install gulp-cli -g'
                 bat 'npm install'
                 //ZOWE_OPT_USERNAME & ZOWE_OPT_PASSWORD are used to interact with Endevor 
-                //withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
-               // bat 'gulp build-cobol'  
+                withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
+                bat 'gulp build-cobol'  
                 }
             }
         }
