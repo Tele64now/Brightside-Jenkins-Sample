@@ -10,6 +10,7 @@ pipeline {
 
         // z/OSMF Connection Details
         ZOWE_OPT_HOST=credentials('eosHost')
+        ALTHOST=credentials('althost')
         ZOWE_OPT_PORT="449"
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
