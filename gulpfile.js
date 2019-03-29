@@ -152,4 +152,4 @@ gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
   });
 }); 
 
- gulp.task('deploy', 'Deploy Program', gulpSequence('copy-dbrm','copy-load','bind-n-grant','cics-refresh'));
+ gulp.task('deploy', 'Deploy Program', gulpSequence('copy-dbrm','copy-load','bind-n-grant'));
