@@ -19,10 +19,11 @@ var cmd = require('node-cmd');
 * @param {number}           wait      wait time in ms between each check
 */
 function awaitJobCompletion(jobId, maxRC=0, callback, tries = 30, wait = 1000) {
+  var altHOST = (typeof process.env.ALTHOST === "undefined") ? "" : process.env.ALTHOST;
   if (tries > 0) {
       sleep(wait);
       cmd.get(
-      'bright jobs view job-status-by-jobid ' + jobId + ' --rff retcode --rft string',
+      'bright jobs view job-status-by-jobid ' + jobId + ' --rff retcode --rft string --host ' + altHOST,
       function (err, data, stderr) {
           retcode = data.trim();
           //retcode should either be null of in the form CC nnnn where nnnn is the return code
@@ -50,8 +51,7 @@ function sleep(ms) {
 
 gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
   var altHOST = (typeof process.env.ALTHOST === "undefined") ? "" : process.env.ALTHOST,
-  command = 'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBIND)" --rff jobid --rft string --host mstrsvw.lvn.broadcom.net' + 
-  altHOST;
+  command = 'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBIND)" --rff jobid --rft string --host ' + altHOST;
     
   // Submit job, await completion
   cmd.get(command, function (err, data, stderr) {
