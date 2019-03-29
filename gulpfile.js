@@ -50,7 +50,7 @@ function sleep(ms) {
 
 gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
   var altHOST = (typeof process.env.ALTHOST === "undefined") ? "" : process.env.ALTHOST,
-  command = 'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBIND)" --rff jobid --rft string' + 
+  command = 'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBIND)" --rff jobid --rft string --host mstrsvw.lvn.broadcom.net' + 
   altHOST;
     
   // Submit job, await completion
