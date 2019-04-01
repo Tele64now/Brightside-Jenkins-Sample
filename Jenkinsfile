@@ -29,7 +29,7 @@ pipeline {
                 bat 'npm config set @brightside:registry https://api.bintray.com/npm/ca/brightside'
 
                 bat 'bright plugins install @brightside/endevor@lts-incremental'
-                bat 'bright plugins install @brightside/filemasterplus@lts-incremental'
+                bat 'bright plugins install @brightside/filemasterplus@2.0.2'
                 bat 'bright plugins install @brightside/ops@lts-incremental'
 
                 bat 'bright plugins install @brightside/cics@lts-incremental'
