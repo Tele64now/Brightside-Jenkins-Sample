@@ -122,7 +122,7 @@ gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
   });
 });*/
 
- /*gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
+ gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
       command = 'bright fmp copy data-set "SHARE.ENDEVOR.MARBLES.MARBLES.D1.DBRMLIB" "SHARE.MARBLES.DBRMLIB" -m MARBLES ' + fmp;
 
@@ -135,7 +135,7 @@ gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
       callback();
     };
   });
-});*/
+});
 
  gulp.task('copy-load', 'Copy LOADLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
