@@ -15,7 +15,7 @@ pipeline {
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
         // File Master Plus Connection Details
-        FMP="--port 5194 --protocol http --reject-unauthorized false"
+        FMP="--port 5194 --protocol http"
 
         // CICS Connection Details
         CICS="--port 10015 --region-name SYSVC510"
