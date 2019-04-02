@@ -188,7 +188,7 @@ describe('Marbles', function () {
       })
     });
 
-    it('should create a single marble with cost 1', function (done) {
+    /*it('should create a single marble with cost 1', function (done) {
       // Create marble
       createMarble(COLOR, 1, 1, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -204,9 +204,9 @@ describe('Marbles', function () {
           done();
         });
       });
-    });
+    });*/
 
-    it('should not create a marble of a color that already exists', function (done) {
+    /*it('should not create a marble of a color that already exists', function (done) {
       // Create marble
       createMarble(COLOR, 2, 1, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -222,9 +222,9 @@ describe('Marbles', function () {
           done();
         });
       });
-    });
+    });*/
 
-    it('should update marble inventory', function (done) {
+    /*it('should update marble inventory', function (done) {
       // Update marble
       updateMarble(COLOR, 2, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -240,9 +240,9 @@ describe('Marbles', function () {
           done();
         });
       });
-    });
+    });*/
 
-    it('should delete the marble color from inventory', function (done) {
+    /*it('should delete the marble color from inventory', function (done) {
       // Delete marble
       deleteMarble(COLOR, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -258,9 +258,9 @@ describe('Marbles', function () {
           done();
         });
       });
-    });
+    });*/
 
-    it('should not be able to "redelete" the marble color from inventory', function (done) {
+    /*it('should not be able to "redelete" the marble color from inventory', function (done) {
       // Try to delete marble again
       deleteMarble(COLOR, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -276,9 +276,9 @@ describe('Marbles', function () {
           done();
         });
       });
-    });
+    });*/
 
-    it('should not update marble inventory for a marble color that does not exist', function (done) {
+    /*it('should not update marble inventory for a marble color that does not exist', function (done) {
       // Update marble
       updateMarble(COLOR, 3, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -294,6 +294,6 @@ describe('Marbles', function () {
           done();
         });
       });
-    });
+    });*/
   });
 });
