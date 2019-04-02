@@ -89,7 +89,7 @@ function deleteMarble(color, callback) {
 function getMarbleQuantity(color, callback) {
   // Submit job, await completion
   cmd.get(
-    'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBIND)" --rff jobid --rft string',
+    'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBDB2)" --rff jobid --rft string',
     function (err, data, stderr) {
       if(err){
         callback(err);
@@ -188,7 +188,7 @@ describe('Marbles', function () {
       })
     });
 
-    it('should create a single marble with cost 1', function (done) {
+    it.only('should create a single marble with cost 1', function (done) {
       // Create marble
       createMarble(COLOR, 1, 1, function(err, data, stderr){
         // Strip unwanted whitespace/newline
