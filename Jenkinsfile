@@ -18,7 +18,7 @@ pipeline {
         FMP="--port 5194 --protocol http"
 
         // CICS Connection Details
-        CICS="--port 10015 --region-name SYSVC510"
+        CICS="--port 10015 --region-name CICS510A"
     }
     stages {
         stage('build') {
