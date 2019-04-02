@@ -179,7 +179,7 @@ describe('Marbles', function () {
    * Verify approrpiate error message is returned
    */
   describe('Inventory Manipulation', function () {
-    const COLOR = "GREEN";
+    const COLOR = "RED";
 
     // Delete the marble to reset inventory to zero (Delete will be tested later)
     before(function(done){
