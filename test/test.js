@@ -188,7 +188,7 @@ describe('Marbles', function () {
       })
     });
 
-    /*it('should create a single marble with cost 1', function (done) {
+    it('should create a single marble with cost 1', function (done) {
       // Create marble
       createMarble(COLOR, 1, 1, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -204,9 +204,9 @@ describe('Marbles', function () {
           done();
         });
       });
-    });*/
+    });
 
-    /*it('should not create a marble of a color that already exists', function (done) {
+    it('should not create a marble of a color that already exists', function (done) {
       // Create marble
       createMarble(COLOR, 2, 1, function(err, data, stderr){
         // Strip unwanted whitespace/newline
@@ -222,7 +222,7 @@ describe('Marbles', function () {
           done();
         });
       });
-    });*/
+    });
 
     /*it('should update marble inventory', function (done) {
       // Update marble
