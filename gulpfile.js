@@ -107,7 +107,7 @@ gulp.task('build-lnk', 'Build LNK element', function (callback) {
 
 gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
 
-/*gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (callback) {
+gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (callback) {
   var cics = (typeof process.env.CICS === "undefined") ? "" : process.env.CICS,
       command = 'bright cics refresh program "MARBLES" ' + cics;
 
@@ -120,7 +120,7 @@ gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
       callback();
     };
   });
-});*/
+});
 
  gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
@@ -152,4 +152,4 @@ gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
   });
 }); 
 
- gulp.task('deploy', 'Deploy Program', gulpSequence('copy-dbrm','copy-load','bind-n-grant'));
+ gulp.task('deploy', 'Deploy Program', gulpSequence('copy-dbrm','copy-load','bind-n-grant','cics-refresh'));
