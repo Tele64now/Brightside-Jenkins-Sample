@@ -188,7 +188,7 @@ describe('Marbles', function () {
       })
     });
 
-    it.only('should create a single marble with cost 1', function (done) {
+    it('should create a single marble with cost 1', function (done) {
       // Create marble
       createMarble(COLOR, 1, 1, function(err, data, stderr){
         // Strip unwanted whitespace/newline
