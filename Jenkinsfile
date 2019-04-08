@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'ca-brightside-ce-agent'   
+    }
     environment {
         // Endevor Details
         ENDEVOR_CONNECTION="--port 7080 --protocol http --reject-unauthorized false"
