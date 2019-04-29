@@ -61,7 +61,7 @@
            ) END-EXEC.                                                          
            EXEC SQL INCLUDE SQLCA END-EXEC.                                     
       * ===============================================================         
-      * MRBL transaction MTH                                                    
+      * MRBL transaction MTH  04292019                                                  
       * ===============================================================         
        PROCEDURE DIVISION.                                                      
       *                                                                         
@@ -90,7 +90,7 @@
                 IF WS-COLOR-FOUND = 1 THEN                                      
                     PERFORM DO-SUB                                              
                 END-IF                                                          
-            ELSE IF WS-VERB-GET = 1 THEN                                        
+            ELSE IF WS-VERB-GET = 1 THEN           
                 PERFORM CHECK-IF-COLOR-FOUND                                    
                 IF WS-COLOR-FOUND = 1 THEN                                      
                     PERFORM DO-GET                                              
