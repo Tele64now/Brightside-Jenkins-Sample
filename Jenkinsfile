@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         // Endevor Details
-        ENDEVOR_CONNECTION="--port 7080 --protocol http --reject-unauthorized false"
-        ENDEVOR_LOCATION="--instance NDVRWEBS --env DEV --sys MARBLES --sub MARBLES --ccid JENK --comment JENK_PDE"
+        ENDEVOR_CONNECTION="--port 6002 --protocol http --reject-unauthorized false"
+        ENDEVOR_LOCATION="--instance ENDEVOR --env DEV --sys MARBLES --sub MARBLES --ccid CUST001 --comment CUST001"
         ENDEVOR="$ENDEVOR_CONNECTION $ENDEVOR_LOCATION"
 
         //ZOWE_OPT_HOSTNAME=credentials('eosHost')
@@ -12,14 +12,14 @@ pipeline {
         // z/OSMF Connection Details 04122019
         ZOWE_OPT_HOST=credentials('eosHost')
         ALTHOST=credentials('altHost')
-        ZOWE_OPT_PORT="449"
+        ZOWE_OPT_PORT="443"
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
         // File Master Plus Connection Details
-        FMP="--port 5194 --protocol http"
+        FMP="--port 6001 --protocol http"
 
         // CICS Connection Details
-        CICS="--port 10015 --region-name CICS510A --host $ALTHOST" 
+        CICS="--port 6000 --region-name CICSTRN1 --host $ALTHOST" 
     }
     stages {
         stage('build') {

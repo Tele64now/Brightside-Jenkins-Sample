@@ -55,8 +55,8 @@
       *   MARB003E (invalid operation was requested)                            
       *                                                                         
       * Build via                                                               
-      *  gulp build --source marbles.cbl && gulp refresh
-      *  --source marbles.cbl   
+      *  gulp build --source marbles.cbl && gulp refresh                        
+      *  --source marbles.cbl                                                   
       *                                                                         
       * ===============================================================         
        IDENTIFICATION DIVISION.                                                 
@@ -240,7 +240,7 @@
                      WS-INPUT-VERB,                                             
                      WS-INPUT-COLOR,                                            
                      WS-INPUT-INV,                                              
-                     WS-INPUT-COST,
+                     WS-INPUT-COST,                                             
                      WS-INPUT-TRAILER                                           
             END-UNSTRING.                                                       
       * ===============================================================         
