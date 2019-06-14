@@ -1,16 +1,16 @@
-      * ===============================================================         
-      * The user invokes this transaction (called MRBL) via:                    
-      *   MRBL <VERB> <COLOR>                                                   
-      *                                                                         
-      * Where:                                                                  
-      *  <VERB> = ADD|SUB                                                       
-      * And:                                                                    
-      *  <COLOR> = RED|BLUE                                                     
-      *                                                                         
-      * Example:                                                                
-      *  MRBL ADD BLUE                                                          
-      *                                                                         
-      * Build via                                                               
+      * ===============================================================
+      * The user invokes this transaction (called MRBL) via: 
+      *   MRBL <VERB> <COLOR> 
+      *   
+      * Where:   
+      *  <VERB> = ADD|SUB   
+      * And:                        
+      *  <COLOR> = RED|BLUE         
+      *                            
+      * Example:               
+      *  MRBL ADD BLUE   
+      *              
+      * Build via     
       *  gulp build --source marbles.cbl && gulp refresh    
       * ===============================================================         
        IDENTIFICATION DIVISION.                                                 
@@ -37,7 +37,7 @@
        01 WS-CONST.                                                             
           02 WS-CONST-ADD PIC X(3) VALUE 'ADD'.                                 
           02 WS-CONST-SUB PIC X(3) VALUE 'SUB'.                                 
-          02 WS-CONST-INIT PIC X(3) VALUE 'INI'.                                
+          02 WS-CONST-INIT PIC X(3) VALUE 'INI'. 
           02 WS-CONST-GET PIC X(3) VALUE 'GET'.                                 
           02 WS-CONST-CREATE PIC X(3) VALUE 'CRE'.                              
           02 WS-CONST-DELETE PIC X(3) VALUE 'DEL'.                              
