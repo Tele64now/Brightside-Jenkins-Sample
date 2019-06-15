@@ -51,7 +51,7 @@ function sleep(ms) {
 
 gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
   var altHOST = (typeof process.env.ALTHOST === "undefined") ? "" : process.env.ALTHOST,
-  command = 'bright jobs submit data-set "CUST001.MARBLES.JCL(MARBIND)" --rff jobid --rft string --host ' + altHOST;
+  command = 'bright jobs submit data-set "CUST006.MARBLES.JCL(MARBIND)" --rff jobid --rft string --host ' + altHOST;
     
   // Submit job, await completion
   cmd.get(command, function (err, data, stderr) {
@@ -77,7 +77,7 @@ gulp.task('bind-n-grant', 'Bind & Grant Job', function (callback) {
 
 gulp.task('build-cobol', 'Build COBOL element', function (callback) {
   var endevor = (typeof process.env.ENDEVOR === "undefined") ? "" : process.env.ENDEVOR,
-      command = "bright endevor generate element MARBLES --sn 1 --type COBOL --override-signout --maxrc 0 " + endevor;
+      command = "bright endevor generate element MARBLE06 --sn 1 --type COBOL --override-signout --maxrc 0 " + endevor;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
@@ -92,7 +92,7 @@ gulp.task('build-cobol', 'Build COBOL element', function (callback) {
 
 gulp.task('build-lnk', 'Build LNK element', function (callback) {
   var endevor = (typeof process.env.ENDEVOR === "undefined") ? "" : process.env.ENDEVOR,
-      command = "bright endevor generate element MARBLES --sn 1 --type LNK --override-signout --maxrc 0 " + endevor;
+      command = "bright endevor generate element MARBLE06 --sn 1 --type LNK --override-signout --maxrc 0 " + endevor;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
@@ -109,7 +109,7 @@ gulp.task('build', 'Build Program', gulpSequence('build-cobol','build-lnk'));
 
 gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (callback) {
   var cics = (typeof process.env.CICS === "undefined") ? "" : process.env.CICS,
-      command = 'bright cics refresh program "MARBLES" ' + cics;
+      command = 'bright cics refresh program "MARBLE06" ' + cics;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
@@ -124,7 +124,7 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
 
  gulp.task('copy-dbrm', 'Copy DBRMLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
-      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.DBRMLIB" "BRIGHT.MARBLES.DBRMLIB" -m MARBLES ' + fmp;
+      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.DBRMLIB" "BRIGHT.MARBLES.DBRMLIB" -m MARBLE06 ' + fmp;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
@@ -139,7 +139,7 @@ gulp.task('cics-refresh', 'Refresh(new-copy) MARBLES CICS Program', function (ca
 
  gulp.task('copy-load', 'Copy LOADLIB to test environment', function (callback) {
   var fmp = (typeof process.env.FMP === "undefined") ? "" : process.env.FMP,
-      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.LOADLIB" "CICS.TRAIN.MARBLES.LOADLIB" -m MARBLES ' + fmp;
+      command = 'bright file-master-plus copy data-set "PRODUCT.NDVR.MARBLES.MARBLES.D1.LOADLIB" "CICS.TRAIN.MARBLES.LOADLIB" -m MARBLE06 ' + fmp;
 
   cmd.get(command, function (err, data, stderr) {
     if(err){
