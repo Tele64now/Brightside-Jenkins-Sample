@@ -59,7 +59,7 @@ pipeline {
                }
             }
         }
-       stage('test') {
+       /*stage('test') {
            environment {
                ZOWE_OPT_HOST=credentials('altHost')
            }
@@ -68,7 +68,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'eosCreds', usernameVariable: 'ZOWE_OPT_USER', passwordVariable: 'ZOWE_OPT_PASSWORD')]) {
                     bat 'npm test' 
                 }
-            }
+            } */
         }
     }
 }
