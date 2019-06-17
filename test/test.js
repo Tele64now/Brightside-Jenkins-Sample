@@ -36,7 +36,7 @@ function awaitJobCompletion(jobId, callback, tries = 30, wait = 1000) {
       'bright jobs view job-status-by-jobid ' + jobId + ' --rff retcode --rft string',
       function (err, data, stderr) {
           retcode = data.trim();
-          if (retcode == "CC 0000") {
+          if (retcode == "CC 0004") {
             callback(null);
           } else if (retcode == "null") {
             awaitJobCompletion(jobId, callback, tries - 1, wait);
