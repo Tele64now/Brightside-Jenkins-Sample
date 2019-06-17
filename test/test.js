@@ -89,7 +89,7 @@ function deleteMarble(color, callback) {
 function getMarbleQuantity(color, callback) {
   // Submit job, await completion
   cmd.get(
-    'bright jobs submit data-set "CUST002.MARBLES.JCL(MARBIND)" --rff jobid --rft string',
+    'bright jobs submit data-set "CUST002.MARBLES.JCL(MARBDB2)" --rff jobid --rft string',
     function (err, data, stderr) {
       if(err){
         callback(err);
