@@ -36,7 +36,7 @@ function awaitJobCompletion(jobId, callback, tries = 30, wait = 1000) {
       'bright jobs view job-status-by-jobid ' + jobId + ' --rff retcode --rft string',
       function (err, data, stderr) {
           retcode = data.trim();
-          if (retcode == "CC 0004") {
+          if (retcode == "CC 0000") {
             callback(null);
           } else if (retcode == "null") {
             awaitJobCompletion(jobId, callback, tries - 1, wait);
@@ -179,7 +179,7 @@ describe('Marbles', function () {
    * Verify approrpiate error message is returned
    */
   describe('Inventory Manipulation', function () {
-    const COLOR = "TURQUOISE";
+    const COLOR = "ORANGE";
 
     // Delete the marble to reset inventory to zero (Delete will be tested later)
     before(function(done){
