@@ -11,7 +11,7 @@ pipeline {
 
         // z/OSMF Connection Details 04122019
         ZOWE_OPT_HOST=credentials('eosHost')
-        ALTHOST=credentials('altHost')
+        //ALTHOST=credentials('altHost')
         ZOWE_OPT_PORT="443"
         ZOWE_OPT_REJECT_UNAUTHORIZED=false
 
@@ -19,7 +19,7 @@ pipeline {
         FMP="--port 6001 --protocol http"
 
         // CICS Connection Details
-        CICS="--port 6000 --region-name CICSTRN1 --host $ALTHOST" 
+        CICS="--port 6000 --region-name CICSTRN1 " 
     }
     stages {
         stage('build') {
