@@ -12,7 +12,7 @@ var cmd = require('node-cmd');
 
 /**
 * Polls jobId. Callback is made without error if Job completes with CC < MaxRC in the allotted time
-* @param {string}           jobId     jobId to check the completion of
+* @param {string}           jobId     jobId to check the completion of job
 * @param {number}           [maxRC=0] maximum allowable return code
 * @param {awaitJobCallback} callback  function to call after completion
 * @param {number}           tries     max attempts to check the completion of the job
