@@ -2,15 +2,9 @@ pipeline {
     agent any
     
     environment {
-<<<<<<< HEAD
         // Endevor Details - checking demo
         ENDEVOR_CONNECTION="--port 7080 --protocol http --reject-unauthorized false"
         ENDEVOR_LOCATION="--instance NDVRWEBS --env DEV --sys MARBLES --sub MARBLES --ccid JENK --comment JENK_PDE"
-=======
-        // Endevor Details
-        ENDEVOR_CONNECTION="--port 6002 --protocol http --reject-unauthorized false"
-        ENDEVOR_LOCATION="--instance ENDEVOR --env DEV --sys MARBLES --sub MARBLES --ccid CUST001 --comment CUST001"
->>>>>>> c7734c0ac536b84a3fec8cb3ccc4d0d572b87eef
         ENDEVOR="$ENDEVOR_CONNECTION $ENDEVOR_LOCATION"
 
         //ZOWE_OPT_HOSTNAME=credentials('eosHost')
