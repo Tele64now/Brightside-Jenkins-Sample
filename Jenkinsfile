@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        // Endevor Details
+        // Endevor Details - checking demo
         ENDEVOR_CONNECTION="--port 7080 --protocol http --reject-unauthorized false"
         ENDEVOR_LOCATION="--instance NDVRWEBS --env DEV --sys MARBLES --sub MARBLES --ccid JENK --comment JENK_PDE"
         ENDEVOR="$ENDEVOR_CONNECTION $ENDEVOR_LOCATION"
