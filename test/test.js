@@ -59,7 +59,7 @@ function awaitJobCompletion(jobId, callback, tries = 30, wait = 1000) {
 */
 function createMarble(color, quantity=1, cost=1, callback) {
   cmd.get(
-    'bright console issue command "F CICSTRN1,MB02 CRE ' + color + " " + quantity + " " + cost + '" --cn CUST002',
+    'bright console issue command "F SYSVC510,MARB CRE ' + color + " " + quantity + " " + cost + '" --cn MARBLES',
     function (err, data, stderr) {
       typeof callback === 'function' && callback(err, data, stderr);
     }
@@ -73,7 +73,7 @@ function createMarble(color, quantity=1, cost=1, callback) {
 */
 function deleteMarble(color, callback) {
   cmd.get(
-    'bright console issue command "F CICSTRN1,MB02 DEL ' + color + '" --cn CUST002',
+    'bright console issue command "F SYSVC510,MARB DEL ' + color + '" --cn MARBLES',
     function (err, data, stderr) {
       typeof callback === 'function' && callback(err, data, stderr);
     }
@@ -89,7 +89,7 @@ function deleteMarble(color, callback) {
 function getMarbleQuantity(color, callback) {
   // Submit job, await completion
   cmd.get(
-    'bright jobs submit data-set "CUST002.MARBLES.JCL(MARBDB2)" --rff jobid --rft string',
+    'bright jobs submit data-set "SHARE.MARBLES.JCL(MARBDB2)" --rff jobid --rft string',
     function (err, data, stderr) {
       if(err){
         callback(err);
@@ -137,7 +137,7 @@ function getMarbleQuantity(color, callback) {
 */
 function updateMarble(color, quantity, callback) {
   cmd.get(
-    'bright console issue command "F CICSTRN1,MB02 UPD ' + color + " " + quantity + '" --cn CUST002',
+    'bright console issue command "F SYSVC510,MARB UPD ' + color + " " + quantity + '" --cn MARBLES',
     function (err, data, stderr) {
       typeof callback === 'function' && callback(err, data, stderr);
     }
@@ -179,7 +179,7 @@ describe('Marbles', function () {
    * Verify approrpiate error message is returned
    */
   describe('Inventory Manipulation', function () {
-    const COLOR = "ORANGE";
+    const COLOR = "RED";
 
     // Delete the marble to reset inventory to zero (Delete will be tested later)
     before(function(done){
